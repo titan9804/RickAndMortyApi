@@ -1,0 +1,125 @@
+/* You can add global styles to this file, and also import other style files */
+.container{
+  margin-top: 4rem;
+}
+
+
+.card{
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
+  box-sizing: border-box;
+  margin: 10px 0;
+  animation: changeFondo 5s linear infinite;
+  max-width: 529px;
+  background-image: url('~src/assets/hexagonos.png');
+  background-repeat: repeat;
+  background-size:auto;
+  transition: all 0.2 ease-in-out;
+  &:hover{
+    box-shadow: 0 5px 5px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.24);
+    cursor: pointer;
+  }
+  img{
+    opacity: 0.7;
+    width: 100%;
+    transition: opacity 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .card-inner{
+    padding: 10px;
+  }
+
+  .point {
+    width: 12px;
+    height: 12px;
+    margin-right: 0.5vw;
+    margin-left: .5vw;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  /* Estilos para el punto en estado "alive" */
+.Alive {
+  background-color: #33ff57; /* Verde */
+}
+
+/* Estilos para el punto en estado "dead" */
+.Dead {
+  background-color: #ff5733; /* Rojo */
+}
+/* Estilos para el punto en estado "dead" */
+.point.unknown {
+  background-color: #646464; /* Rojo */
+}
+.pointText{
+  display: inline-flex;
+}
+}
+
+@keyframes changeFondo {
+  0%, 100% {
+    background-color: #be3bea;
+  }
+  50% {
+    background-color: #62c9e9;
+  }
+}
+.animated-bg {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url('~src/assets/rick.png');
+  background-repeat:inherit;
+  background-size:contain;
+  animation: changeColor 5s linear infinite, starsAppear 10s linear infinite;
+}
+
+@keyframes changeColor {
+  0%, 100% {
+    background-color: #65227c;
+  }
+  50% {
+    background-color: #058ab2;
+  }
+}
+
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  animation: starFloating 5s linear infinite;
+}
+
+@keyframes starFloating {
+  0%, 100% {
+    transform: translateY(5vw);
+  }
+  50% {
+    transform: translateY(10vw);
+  }
+}
+
+@keyframes starsAppear {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+}
+
